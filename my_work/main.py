@@ -3,11 +3,13 @@ def main():
     while True:
         match menu:
             case 'login':
-                username = input('What is your username: ')
+                account = login()
             case 'register':
-                register = input('(Username) (password): ')
+                reg = register()
+                break
             case 'quit':
                 print('End Program')
+                break
             case 'change password':
                 passchange = input('What is your new password: ')
             case 'logout':
@@ -15,37 +17,63 @@ def main():
 
 
 
+def register():
+    register = input('What is new username: ')
+    input('What is password')
+
+
+
 
 def login():
-    global account = (username, password)
-    
+    #accounts = (username, password)
+    login = input('What is your username: ')
     while True:
-        match username:
-            case 'sithLord Ancient' | 'd_Vader' | 'GENERALleia' | 'grogu' | 'there_is_no_try' | 'MyRey' | 'Luke':
-                password = input('What is your password')
-                break
-            case _:
-                print('username not found, try again: ')
+        if login in username:
+            password()
+        else:
+            print('username not found, try again: ')
+            break
         
+
+def password():
+    password = input('What is your password: ')
     match password:
         case 'Ancient enimes r us' | "I'm Your Father" | 'May the Force be with you' | 'patu' | 'Yoda' | 'I Am All The Jedi' | 'May the Force be with you':
-            menu2 = input('Login Succesful, Change password?, Logout?')
+            menu2()
         case _:
             print('Login unsuccessful')
 
 
 
 
-accounts = [{'username':'sithLord', 'password':'Ancient enimes r us' } {'username':'d_Vader' , 'password':"I'm Your Father"  } {'username':'GENERALleia' , 'password':'May the Force be with you'  } {'username':'grogu', 'password':'patu'  } {'username':'there_is_no_try' , 'password':'Yoda'  } {'username':'MyRey' , 'password':'I Am All The Jedi'  } {'username':'Luke', 'password': 'May the Force be with you'  }]
+def menu2():
+    menu2 = input('Login Succesful, Change password?, Logout: ').lower().strip()
+    match menu2:
+        case 'logout':
+            main()
+        case 'change password':
+            passchange()
 
 
 
-]
 
 
 
 
 
+
+
+username = ['sithLord Ancient', 'd_Vader', 'GENERALleia', 'grogu', 'there_is_no_try', 'MyRey', 'Luke']
+accounts = [{'username':'sithLord', 'password':'Ancient enimes r us' }, {'username':'d_Vader' , 'password':"I'm Your Father"  }, {'username':'GENERALleia' , 'password':'May the Force be with you'  }, {'username':'grogu', 'password':'patu'  }, {'username':'there_is_no_try' , 'password':'Yoda'  }, {'username':'MyRey' , 'password':'I Am All The Jedi'  }, {'username':'Luke', 'password': 'May the Force be with you'  }]
+
+
+
+
+
+
+
+
+#case 'sithLord Ancient' | 'd_Vader' | 'GENERALleia' | 'grogu' | 'there_is_no_try' | 'MyRey' | 'Luke':
 
     #while True:
     #    import csv
@@ -73,8 +101,8 @@ def register():
 
 
 
-def menu2(login):
-    if login is True:
+#def menu2(login):
+#    if login is True:
 
 
 
