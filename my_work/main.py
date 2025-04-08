@@ -1,30 +1,60 @@
 def main():
-    menu = input('What would you like to do: ').lower().strip()
-    print('Login, register, quit')
-    match menu:
-        case 'login':
-            login = input('What is your login')
-        case 'register':
-            register = input('(Username) (password): ')
-        case 'quit':
-            print('End Program')
-        case 'change password':
-            passchange = input('What is your new password: ')
-        case 'logout':
-            logout = print('user is logged out')
+    menu = input('What would you like to do (Login, Register, Quit): ').lower().strip()
+    while True:
+        match menu:
+            case 'login':
+                username = input('What is your username: ')
+            case 'register':
+                register = input('(Username) (password): ')
+            case 'quit':
+                print('End Program')
+            case 'change password':
+                passchange = input('What is your new password: ')
+            case 'logout':
+                logout = print('user is logged out')
 
 
 
 
 def login():
+    global account = (username, password)
+    
     while True:
-        import csv
-
-        accounts = []
+        match username:
+            case 'sithLord Ancient' | 'd_Vader' | 'GENERALleia' | 'grogu' | 'there_is_no_try' | 'MyRey' | 'Luke':
+                password = input('What is your password')
+                break
+            case _:
+                print('username not found, try again: ')
         
-        with open('plain_text.txt') as file:
-            reader = csv.DictReader(file)
-            for row in reader:
+    match password:
+        case 'Ancient enimes r us' | "I'm Your Father" | 'May the Force be with you' | 'patu' | 'Yoda' | 'I Am All The Jedi' | 'May the Force be with you':
+            menu2 = input('Login Succesful, Change password?, Logout?')
+        case _:
+            print('Login unsuccessful')
+
+
+
+
+accounts = [{'username':'sithLord', 'password':'Ancient enimes r us' } {'username':'d_Vader' , 'password':"I'm Your Father"  } {'username':'GENERALleia' , 'password':'May the Force be with you'  } {'username':'grogu', 'password':'patu'  } {'username':'there_is_no_try' , 'password':'Yoda'  } {'username':'MyRey' , 'password':'I Am All The Jedi'  } {'username':'Luke', 'password': 'May the Force be with you'  }]
+
+
+
+]
+
+
+
+
+
+
+    #while True:
+    #    import csv
+#
+        #accounts = []
+        
+        #with open('plain_text.txt') as file:
+        #    reader = csv.DictReader(file)
+        #    for row in reader:
 
 
 
@@ -59,7 +89,3 @@ main()
 
 
 
-            #for line in file:
-                #username, password = line.rstrip(), split(',')
-                #username = {'username': username, 'password': password}
-                #user.append(username)
